@@ -76,7 +76,6 @@ def getline_v2(f,location):
         s = np.sum(temp, axis=0)
         for t in range(n):
             if s[t] > 5*255:
-                print(s[t])
                 temp[:, t] = 0
         return temp
 

@@ -63,6 +63,7 @@ def line_operation(f,ori):
         y0 = round(0.06 * M)#?
 
     ori = myreverse(ori) #取反
+
     result = move_x(ori, x0) #平移
     result = move_y(result, -y0)
     result = myreverse_back(result)

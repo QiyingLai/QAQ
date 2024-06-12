@@ -7,7 +7,7 @@ def filter_v2(f):
     #用于得到平滑的胶片边框
     #laiqiying 2024/6/4
     f = cv2.GaussianBlur(f, (11,11), 0)
-    g=cv2.Canny(f,threshold1=10,threshold2=70,L2gradient=True)
+    g=cv2.Canny(f,threshold1=10,threshold2=70,L2gradient=True,apertureSize=3)
 
     g=cv2.dilate(g,np.ones((4, 4), np.uint8))
 
@@ -29,5 +29,4 @@ def filter_v2(f):
     g = g.astype(np.uint8) * 255
     g = cv2.blur(g, (3, 3), borderType=cv2.BORDER_REPLICATE)
     g[g >0] = 255
-
     return g

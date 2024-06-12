@@ -21,6 +21,7 @@ def getbigone(f):
             continue
         if stats1[i][-1] >= t:#去除字母，获取框和两个圆
             f1[L1 == i] = 255
+
     if max_stat_index==0:
         return None
     f2[L1==max_stat_index]=255#只有框的图
